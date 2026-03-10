@@ -10,7 +10,7 @@ import time
 
 # Page configuration
 st.set_page_config(
-    page_title="AI Blog Generator",
+    page_title="AI Blog/Article Generator",
     page_icon="📝",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -31,7 +31,7 @@ st.markdown("""
         border-radius: 5px;
     }
     .stats-box {
-        background-color: #e7f3ff;
+        background-color: #90d6ff;
         border: 1px solid #b3d9ff;
         padding: 10px;
         border-radius: 5px;
@@ -49,7 +49,7 @@ if "article_meta" not in st.session_state:
     st.session_state.article_meta = None
 
 # Header
-st.markdown("<h1 class='main-header'>📝 AI Blog Generator</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='main-header'>📝 AI Blog/Article Generator</h1>", unsafe_allow_html=True)
 st.markdown("*Powered by OpenAI GPT | Generate high-quality articles in seconds*")
 st.markdown("---")
 
@@ -59,14 +59,14 @@ with st.sidebar:
     
     # Input fields
     topic = st.text_input(
-        "📌 Blog Topic",
-        placeholder="e.g., The Future of AI in Healthcare",
+        "✍️ Blog Topic",
+        placeholder="e.g., The Future of AI in Finance",
         help="Enter the main topic for your article"
     )
     
     keywords = st.text_input(
         "🏷️ Keywords (comma-separated)",
-        placeholder="e.g., machine learning, diagnosis, patient care",
+        placeholder="e.g., machine learning, Risk, Fraud analytics",
         help="Include relevant keywords for SEO and content relevance"
     )
     
@@ -88,12 +88,12 @@ with st.sidebar:
     st.markdown("---")
     
     # Generate button
-    generate_button = st.button("🚀 Generate Article", use_container_width=True)
+    generate_button = st.button(" 🤖 Generate Article", use_container_width=True)
     
     st.markdown("---")
     st.markdown("### 📚 Example Prompts")
     examples = [
-        ("Healthcare", "machine learning, diagnosis, patient care", "Professional", 800),
+        ("Finance", "machine learning, Risk, Fraud analytics", "Professional", 800),
         ("Remote Work", "flexibility, productivity, challenges", "Casual", 700),
         ("Web3", "blockchain, smart contracts, decentralization", "Technical", 1000),
     ]
@@ -151,7 +151,7 @@ if st.session_state.generated_article:
     with col1:
         st.metric("📊 Word Count", word_count)
     with col2:
-        st.metric("📝 Character Count", char_count)
+        st.metric("🔡 Character Count", char_count)
     with col3:
         st.metric("⏱️ Reading Time", formatted_reading_time)
     with col4:
@@ -160,7 +160,7 @@ if st.session_state.generated_article:
     st.markdown("---")
     
     # Article Content
-    st.markdown("### 📰 Article Content")
+    st.markdown("### 📰 Blog/Article Content")
     st.write(st.session_state.generated_article)
     
     st.markdown("---")
@@ -199,7 +199,7 @@ if st.session_state.generated_article:
 st.markdown("---")
 st.markdown("""
     <div style='text-align: center; color: gray; font-size: 12px;'>
-        <p>Made with ❤️ using Streamlit and OpenAI GPT</p>
-        <p>© 2024 AI Content Generator | All rights reserved</p>
+        <p>Made using Streamlit and OpenAI GPT</p>
+        <p>© 2026 AI Content Generator </p>
     </div>
 """, unsafe_allow_html=True)

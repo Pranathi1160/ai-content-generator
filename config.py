@@ -15,7 +15,7 @@ DEFAULT_MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
 MAX_TOKENS = int(os.getenv("MAX_TOKENS", 1024))
 
 # Application Configuration
-APP_TITLE = "AI Blog Generator"
+APP_TITLE = "AI Blog/Article Generator"
 APP_ICON = "📝"
 
 # Content Generation Settings
